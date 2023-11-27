@@ -1,31 +1,33 @@
 <template>
   <section>
-    <img v-bind:src="picture" width="150" height="200"/>
-    <h1>ชื่อผู้สมัครงาน : {{getfullName()}}</h1>
+    <img v-bind:src="picture" width="260" height="300">
+    <h1>ชื่อผู้สมัครงาน : {{fullname()}}</h1>
     <h1>อายุ : {{age}} ปี</h1>
     <p>ที่อยู่ : <span v-html="address"></span></p>
+    <h2><img v-bind:src="picture1" width="30" height="25"> : <a :href="social" target="_blank">Warissara Phongphimai</a></h2>
   </section>
 </template>
+
 <script>
 export default {
   name: 'App',
   data(){
     return{
-      firstName:"วริศรา",
-      lastName:"พงษ์พิมาย",
+      firstname:"วริศรา",
+      lastname:"พงษ์พิมาย",
       age:17,
-      address: "<i>จังหวัดฉะเชิงเทรา</i>",
-      picture:"https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/07/top-20-small-dog-breeds.jpeg.jpg",
-      size:160,
-      social:"https://www.facebook.com/warissara.phongphimai.9"
+      address:"<i>จังหวัดฉะเชิงเทรา</i>",
+      picture:"https://www.pedigree.co.th/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf3521/files/2022-02/hero-5-dog.png",
+      social:"https://www.facebook.com/warissara.phongphimai.9",
+      picture1:"https://cdn.pixabay.com/photo/2021/06/15/12/51/facebook-6338509_1280.png"
     }
   },
-  method:{
-    getfullName(){
-      return this.firstname + " " + this.lastName 
+  methods:{
+    fullname(){
+      return this.firstname + " "+ this.lastname
     }
-  } 
-}
+  }
+  }
 </script>
 
 <style>
@@ -38,4 +40,3 @@ export default {
   margin-top: 60px;
 }
 </style>
-
