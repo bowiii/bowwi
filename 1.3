@@ -1,0 +1,63 @@
+<template>
+  <section>
+    <img v-bind:src="picture" width="150" height="200">
+    <h1>ชื่อผู้สมัครงาน : {{fullname()}}</h1>
+    <h1>อายุ : {{age}} ปี</h1>
+    <p>ที่อยู่ : <span v-html="address"></span></p>
+    <a :href="social" target="_blank">facebook</a>
+    <p>งานอดิเรก : </p>
+    <ul>
+      <li>{{hobby[0]}}</li>
+      <li>{{hobby[1]}}</li>
+      <li>{{hobby[2]}}</li>
+      <li>{{hobby[3]}}</li>
+    </ul>
+    <p>ข้อมูลพื้นฐาน :</p>
+    <ul>
+      <li>เพศ :{{general.gender}}</li>
+      <li>น้ำหนัก :{{general.weight}} กิโลกรัม</li>
+      <li>ส่วนสูง :{{general.height}} เซนติเมตร</li>
+      <li>โรคประจำตัว :{{general.status}}</li>
+    </ul>
+    <button @click="showData"> คลิกเพื่อดูข้อมูล</button>
+    <button @click="increwment"> เพิ่ม </button>
+    <button @click="decrement">ลด</button>
+    <h2><img v-bind:src="picture1" width="30" height="25"> : <a :href="social" target="_blank">Warissara Phongphimai</a></h2>
+    </section>
+    <tablebobo :theader="theader" :tdata="tdata"/>
+  
+</template>
+
+
+<script>
+export default {
+  name: 'App',
+  data(){
+    return{
+      firstname:"วริศรา",
+      lastname:"พงษ์พิมาย",
+      age:17,
+      address:"<i>จังหวัดฉะเชิงเทรา</i>",
+      picture:"https://www.pedigree.co.th/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf3521/files/2022-02/hero-5-dog.png",
+      social:"https://www.facebook.com/warissara.phongphimai.9",
+      picture1:"https://cdn.pixabay.com/photo/2021/06/15/12/51/facebook-6338509_1280.png"
+    }
+  },
+  methods:{
+    fullname(){
+      return this.firstname + " "+ this.lastname
+    }
+  }
+  }
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
